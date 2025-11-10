@@ -1,0 +1,1837 @@
+/* --- (النسخة النهائية 😈: "التصميم الجمالي" 🎨) --- */
+
+/* --- 1. لوحة الألوان الأسطورية 🎨 (Root Colors) --- */
+:root {
+    --primary-color: #0056b3;
+    /* (أزرق "أعمق" 😈) */
+    --primary-color-dark: #004085;
+    --secondary-color: #e6f0ff;
+    /* (أزرق "سماوي" فاتح ☁️) */
+    --accent-color: #ffc107;
+    /* (أصفر/ذهبي ⭐️ للتقييمات) */
+
+    --light-bg-color: #f8f9fa;
+    /* (رمادي "أنظف") */
+    --dark-text: #212529;
+    /* (أسود "أنعم") */
+    --light-text: #6c757d;
+    --border-color: #e5e7eb;
+    /* (لون "احترافي" 🛡️ للحدود) */
+}
+
+/* --- 2. "الجسم" 🎨 (الخطوط والخلفية) --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg-color);
+    /* (تغيير الخلفية الرئيسية 🚀) */
+    color: var(--dark-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    /* (لخطوط "أنعم" 😈) */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color-dark);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* --- 3. الـ Navbar (شريط التنقل 🛡️) --- */
+.navbar {
+    background-color: #ffffff;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    /* (ظل "أنعم" 😈) */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark-text);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: var(--light-text);
+    font-weight: 500;
+}
+
+.nav-links a.nav-link-login {
+    font-weight: 700;
+}
+
+/* --- 4. الأزرار الأسطورية 🔘 (Buttons) --- */
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    /* (أكثر انحناءً 😈) */
+    font-weight: 700;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 86, 179, 0.1);
+}
+
+/* (الزر الأساسي - "S'inscrire" 🚀) */
+.btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #ffffff;
+    transform: translateY(-2px);
+    /* (تأثير "الوحش" 😈) */
+    box-shadow: 0 4px 10px rgba(0, 86, 179, 0.2);
+}
+
+/* (الزر "الصلب" - "Publier" 🚀) */
+.btn-primary-solid {
+    background-image: linear-gradient(to right, #0056b3 0%, #004085 100%);
+    /* (تدرج لوني 🌈) */
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 86, 179, 0.2);
+}
+
+.btn-primary-solid:hover {
+    transform: translateY(-2px) scale(1.02);
+    /* (تأثير "الوحش" 😈) */
+    box-shadow: 0 6px 20px rgba(0, 86, 179, 0.3);
+}
+
+.btn-secondary {
+    background-color: #e9ecef;
+    color: var(--dark-text);
+    border-color: #e9ecef;
+}
+
+.btn-secondary:hover {
+    background-color: #d6dbdf;
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    padding: 5px 12px;
+    font-size: 13px;
+    border-radius: 6px;
+}
+
+.btn-full {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+}
+
+/* --- 5. الـ Hero Section (التدرج اللوني 🌈) --- */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #007bff 100%);
+    color: #ffffff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    font-weight: 700;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* (ظل للنص 😈) */
+}
+
+.hero-buttons .btn-primary-solid {
+    background: #ffffff;
+    color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-buttons .btn-primary-solid:hover {
+    background: #f0f0f0;
+    color: var(--primary-color-dark);
+    transform: translateY(-2px) scale(1.03);
+}
+
+.hero-buttons .btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    /* (زر "شفاف" 😈) */
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.hero-buttons .btn-secondary:hover {
+    background: #ffffff;
+    color: var(--primary-color);
+}
+
+/* --- 6. البطاقات 🎨 (Cards) --- */
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: var(--light-text);
+    margin-bottom: 50px;
+}
+
+.dashboard-section,
+.project-card,
+.proposal-card-item,
+.profile-widget,
+.profile-header-card,
+.auth-container,
+.review-form-container {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    /* (انحناء "أسطوري" 😈) */
+    box-shadow: 0 5px 20px rgba(0, 64, 133, 0.05);
+    /* (ظل "أنعم" 🚀) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover,
+.proposal-card-item:hover,
+.profile-widget:hover,
+.step-card:hover,
+.category-card:hover,
+.talent-card:hover {
+    transform: translateY(-5px);
+    /* (تأثير "الرفع" 😈) */
+    box-shadow: 0 8px 25px rgba(0, 64, 133, 0.08);
+}
+
+/* --- 7. قسم "كيف يعمل" (الترقية 🎨) --- */
+.how-it-works-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.step-card {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    width: 24%;
+}
+
+.step-card .step-number {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: linear-gradient(135deg, var(--primary-color) 0%, #007bff 100%);
+    /* (تدرج 🌈) */
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 86, 179, 0.3);
+}
+
+.step-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    font-size: 14px;
+    color: var(--light-text);
+    line-height: 1.5;
+}
+
+/* --- 8. قسم "الفئات" (الترقية 🎨) --- */
+.categories-section {
+    padding: 80px 0;
+    background-color: var(--light-bg-color);
+}
+
+.categories-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.category-card {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    color: var(--dark-text);
+    text-decoration: none;
+}
+
+.category-card:hover {
+    border-color: var(--primary-color);
+}
+
+.category-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.category-card p {
+    font-size: 14px;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin: 0;
+}
+
+/* --- 9. قسم "الطلبة المميزون" (الترقية 🎨) --- */
+.talents-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.talents-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.talent-card {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.talent-photo {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.talent-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin: 15px 0 5px 0;
+}
+
+.talent-headline {
+    font-size: 14px;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin: 0 0 5px 0;
+    padding: 0 10px;
+}
+
+.talent-university {
+    font-size: 13px;
+    color: var(--light-text);
+    margin: 0 0 15px 0;
+}
+
+.talent-rating {
+    font-size: 14px;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+/* (اللون الذهبي ⭐️) */
+.talent-rating .rating-text {
+    color: var(--light-text);
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+/* --- 10. الفوتر (الترقية 🎨) --- */
+.footer {
+    background-color: var(--dark-text);
+    color: #ffffff;
+    padding: 60px 0 20px 0;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-col {
+    padding-right: 20px;
+}
+
+.footer-logo {
+    color: #ffffff;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.footer-desc {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.footer-col h4::after {
+    content: '';
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary-color);
+    /* (أزرق 😈) */
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #ccc;
+    font-size: 14px;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+}
+
+/* --- 11. صفحات الدخول/التسجيل (الترقية 🎨) --- */
+.auth-page {
+    background-color: var(--light-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 72px);
+    padding: 40px 0;
+}
+
+.auth-container {
+    max-width: 450px;
+    padding: 40px;
+}
+
+.auth-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.auth-subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: var(--light-text);
+    margin-bottom: 30px;
+}
+
+.auth-form .form-group {
+    margin-bottom: 20px;
+}
+
+.auth-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.auth-form input[type="email"],
+.auth-form input[type="password"],
+.auth-form input[type="text"],
+.auth-form select {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    /* (انحناء 😈) */
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--secondary-color);
+    /* (تأثير "الوحش" 😈) */
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    color: var(--light-text);
+}
+
+.auth-footer a {
+    font-weight: 700;
+}
+
+/* --- 12. الداشبورد (الترقية 🎨) --- */
+.dashboard-page {
+    padding: 40px 0;
+}
+
+.dashboard-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.dashboard-section {
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.section-title-sm {
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.overview-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.overview-card {
+    background-color: var(--light-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+}
+
+.overview-card h3 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0 0 5px 0;
+}
+
+.overview-card p {
+    font-size: 15px;
+    color: var(--light-text);
+    font-weight: 500;
+    margin: 0;
+}
+
+.quick-links .btn {
+    margin-right: 15px;
+    font-size: 15px;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+    padding: 15px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dashboard-table th {
+    background-color: var(--light-bg-color);
+    color: var(--light-text);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.dashboard-table td {
+    color: var(--dark-text);
+}
+
+.dashboard-table td:first-child {
+    font-weight: 700;
+}
+
+.status {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.status-open {
+    background-color: #e6f0ff;
+    color: #0056b3;
+}
+
+.status-in_progress {
+    background-color: #fffbe6;
+    color: #b88b00;
+}
+
+.status-in_review {
+    background-color: #ffedeb;
+    color: #c23934;
+}
+
+.status-completed {
+    background-color: #e6f4ea;
+    color: #2b7d4a;
+}
+
+/* --- 13. صفحة "نشر مشروع" (الترقية 🎨) --- */
+.publish-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.form-step {
+    border: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+.form-step:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.form-step legend {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.publish-form-container textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    min-height: 120px;
+    resize: vertical;
+}
+
+.publish-form-container textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--secondary-color);
+}
+
+.form-group-half {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group-half .form-group {
+    width: 50%;
+}
+
+.input-file::file-selector-button {
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    border: 2px solid var(--primary-color);
+    background-color: transparent;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.input-file::file-selector-button:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.publish-form-container small {
+    font-size: 13px;
+    color: var(--light-text);
+    margin-top: 5px;
+    display: block;
+}
+
+/* --- 14. لوحة تحكم الطالب (الترقية 🎨) --- */
+.profile-completion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(135deg, var(--primary-color) 0%, #007bff 100%);
+    /* (تدرج 🌈) */
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+}
+
+.profile-completion .section-title-sm {
+    color: #ffffff;
+}
+
+.profile-completion p {
+    color: #e0e0e0;
+    margin: 0 0 15px 0;
+}
+
+.profile-completion .btn-primary-solid.btn-sm {
+    background: #ffffff;
+    color: var(--primary-color);
+    border-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar-container {
+    width: 200px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #ffffff;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px 0 0 15px;
+    /* (تعديل 😈) */
+    transition: width 0.5s ease-in-out;
+    /* (تأثير "الوحش" 😈) */
+}
+
+.project-feed-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px 0;
+}
+
+.project-feed-item:last-of-type {
+    border-bottom: none;
+}
+
+.project-feed-item h4 {
+    margin: 0 0 5px 0;
+}
+
+.project-feed-item h4 a {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark-text);
+}
+
+.item-meta {
+    font-size: 14px;
+    color: var(--light-text);
+    margin: 0 0 10px 0;
+}
+
+.item-meta strong {
+    color: var(--primary-color);
+}
+
+.item-skills span,
+.card-skills span {
+    /* (تصميم "الحبوب" 💊 الصغير) */
+    display: inline-block;
+    background-color: var(--light-bg-color);
+    color: var(--light-text);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-right: 5px;
+    border: 1px solid var(--border-color);
+}
+
+.feed-footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* --- 15. صفحة "تصفح المشاريع" (الترقية 🎨) --- */
+.explore-page {
+    padding: 40px 0;
+}
+
+.explore-header {
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+}
+
+.search-bar {
+    display: flex;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px 0 0 8px;
+    /* (انحناء 😈) */
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.search-bar input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--secondary-color);
+}
+
+.search-bar .btn {
+    border-radius: 0 8px 8px 0;
+}
+
+.explore-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.filters-sidebar {
+    width: 25%;
+    padding: 25px;
+    border-radius: 12px;
+    height: fit-content;
+    position: sticky;
+    /* (تثبيت 😈) */
+    top: 90px;
+}
+
+.filter-title {
+    font-size: 20px;
+    margin: 0 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filter-group {
+    margin-bottom: 25px;
+}
+
+.filter-group h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.filter-option input {
+    margin-right: 8px;
+}
+
+.filter-option label {
+    font-size: 14px;
+    color: var(--light-text);
+}
+
+.filter-budget {
+    display: flex;
+    align-items: center;
+}
+
+.filter-budget input {
+    width: 40%;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.filter-budget span {
+    margin: 0 10px;
+}
+
+.project-list {
+    width: 75%;
+}
+
+.project-card {
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.card-header h3 {
+    margin: 0;
+}
+
+.card-header h3 a {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark-text);
+}
+
+.project-budget {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.card-date {
+    font-size: 13px;
+    color: var(--light-text);
+    margin: 0 0 15px 0;
+}
+
+.card-description {
+    font-size: 14px;
+    color: var(--light-text);
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+}
+
+.card-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.offer-count {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--light-text);
+}
+
+/* --- 16. صفحة "تفاصيل المشروع" (الترقية 🎨) --- */
+.project-details-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.project-details-content {
+    width: 65%;
+}
+
+.project-full-details {
+    padding: 35px;
+    border-radius: 12px;
+}
+
+.project-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin: 10px 0;
+}
+
+.details-section-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 30px 0 15px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.project-full-details p {
+    font-size: 15px;
+    color: var(--light-text);
+    line-height: 1.7;
+}
+
+.project-proposal-sidebar {
+    width: 35%;
+    position: sticky;
+    top: 90px;
+}
+
+.proposal-card {
+    padding: 30px;
+}
+
+.proposal-title {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+.project-budget-aside {
+    text-align: center;
+    font-size: 16px;
+    color: var(--light-text);
+    margin: 0 0 20px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.project-budget-aside strong {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.proposal-card .auth-form label {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.proposal-card .auth-form .form-group {
+    margin-bottom: 15px;
+}
+
+/* --- 17. الشات "الوحش" 😈 (الترقية 🎨) --- */
+.chat-page {
+    height: calc(100vh - 72px);
+    background-color: var(--light-bg-color);
+    padding: 0;
+}
+
+.chat-page .container {
+    max-width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.chat-container {
+    display: flex;
+    height: 100%;
+    background-color: #ffffff;
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+}
+
+.conversations-sidebar {
+    width: 30%;
+    min-width: 300px;
+    height: 100%;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.convo-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.convo-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.convo-item:hover {
+    background-color: var(--light-bg-color);
+}
+
+.convo-item.active {
+    background-color: var(--secondary-color);
+}
+
+/* (لون أزرق فاتح 😈) */
+.convo-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.convo-details {
+    flex: 1;
+    overflow: hidden;
+}
+
+.convo-name {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.convo-preview {
+    font-size: 13px;
+    color: var(--light-text);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.convo-time {
+    font-size: 12px;
+    color: var(--light-text);
+}
+
+.chat-window {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-window-header {
+    display: flex;
+    justify-content: space-between;
+    /* (لزر التسليم 😈) */
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: #ffffff;
+}
+
+.header-info-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.header-info-wrapper h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.header-info-wrapper .convo-avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.header-actions {
+    display: none;
+}
+
+/* (مخفي افتراضياً 😈) */
+.header-actions .btn-sm i {
+    margin-right: 5px;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: var(--light-bg-color);
+}
+
+.message {
+    margin-bottom: 15px;
+    max-width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+.message p {
+    padding: 12px 18px;
+    border-radius: 20px;
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.msg-time {
+    font-size: 11px;
+    color: var(--light-text);
+    margin: 3px 10px 0 10px;
+}
+
+.message.received {
+    align-items: flex-start;
+}
+
+.message.received p {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-bottom-left-radius: 5px;
+    /* (شكل "شات" 😈) */
+}
+
+.message.sent {
+    align-items: flex-end;
+    margin-left: auto;
+}
+
+.message.sent p {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-bottom-right-radius: 5px;
+    /* (شكل "شات" 😈) */
+}
+
+.chat-input-area {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-top: 1px solid var(--border-color);
+    background-color: #ffffff;
+}
+
+.chat-input-area input {
+    flex: 1;
+    padding: 12px 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    /* (شكل "حبة دواء" 💊) */
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    margin: 0 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chat-input-area input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--secondary-color);
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--light-text);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.btn-icon:hover {
+    color: var(--primary-color);
+}
+
+.btn-icon.btn-send {
+    color: var(--primary-color);
+    font-size: 22px;
+}
+
+/* --- 18. تصميم صفحة "إدارة العروض" (الترقية 🎨) --- */
+.project-summary-header {
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.proposals-list-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    align-items: start;
+}
+
+.proposal-card-item {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.proposal-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--light-bg-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.proposal-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.proposal-freelancer-info h4 {
+    margin: 0 0 3px 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.proposal-freelancer-info h4 a {
+    color: var(--dark-text);
+}
+
+.proposal-freelancer-info h4 a:hover {
+    color: var(--primary-color);
+}
+
+.proposal-freelancer-info p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.proposal-details {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.detail-item {
+    text-align: center;
+}
+
+.detail-item span {
+    font-size: 12px;
+    color: var(--light-text);
+    display: block;
+}
+
+.detail-item strong {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark-text);
+    display: block;
+}
+
+.proposal-body {
+    padding: 20px;
+    font-size: 14px;
+    color: var(--light-text);
+    line-height: 1.6;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.proposal-body p {
+    margin-top: 0;
+}
+
+.proposal-body i {
+    margin-right: 5px;
+}
+
+.proposal-actions {
+    padding: 15px 20px;
+    background-color: var(--light-bg-color);
+    text-align: right;
+}
+
+.proposal-actions .btn-primary-solid i {
+    margin-right: 5px;
+}
+
+/* --- 19. تصميم نموذج التقييم (النجوم ⭐️) --- */
+.review-form-container {
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.rating-stars {
+    display: inline-block;
+    direction: rtl;
+    border: none;
+}
+
+.rating-stars input[type="radio"] {
+    display: none;
+}
+
+.rating-stars label {
+    font-size: 30px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 0 2px;
+}
+
+.rating-stars:hover label,
+.rating-stars:hover label~label {
+    color: var(--accent-color);
+}
+
+.rating-stars input[type="radio"]:checked~label {
+    color: var(--accent-color);
+}
+
+/* --- 20. تصميم "علامات" المهارات ⭐️ (profile-edit.php) --- */
+.skills-checkbox-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    background-color: var(--light-bg-color);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.skill-checkbox-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.skill-checkbox-item:hover {
+    border-color: var(--primary-color);
+}
+
+.skill-checkbox-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+
+.skill-checkbox-item label {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--dark-text);
+    margin-bottom: 0;
+}
+
+/* --- 21. تصميم "حبوب" المهارات 💊 (profile.php) --- */
+.profile-skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-pill {
+    background-color: var(--secondary-color);
+    /* (أزرق فاتح 😈) */
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.skill-pill:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    transform: translateY(-2px);
+    border-color: var(--primary-color-dark);
+}
+
+/* --- 22. رسائل الحالة (Success/Error) --- */
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* --- 23. (الجديد 😈) تصميم "القائمة المنسدلة" 🚀 (publish-project.php) --- */
+.multiselect-container {
+    position: relative;
+}
+
+.multiselect-display {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.multiselect-display span {
+    color: var(--light-text);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+}
+
+.multiselect-display i {
+    color: var(--light-text);
+    transition: transform 0.3s ease;
+}
+
+.multiselect-container.open .multiselect-display {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--secondary-color);
+}
+
+.multiselect-container.open .multiselect-display i {
+    transform: rotate(180deg);
+    /* (🔺) */
+}
+
+.multiselect-options {
+    display: none;
+    position: absolute;
+    top: 105%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.multiselect-options.visible {
+    display: block;
+}
+
+/* --- (التصميم "الجمالي" 🎨 للـ "قرص" 💊 الذي طلبته) --- */
+.multiselect-options .skill-checkbox-item {
+    display: block;
+    /* (تغيير 😈) */
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    border-radius: 0;
+    padding: 0;
+    /* (تغيير 😈) */
+}
+
+.multiselect-options .skill-checkbox-item:last-child {
+    border-bottom: none;
+}
+
+/* (إخفاء 👻 "العلامة" (Checkbox) الحقيقية) */
+.multiselect-options .skill-checkbox-item input[type="checkbox"] {
+    display: none;
+}
+
+/* (تصميم "القرص" 💊 (Label)) */
+.multiselect-options .skill-checkbox-item label {
+    display: block;
+    padding: 12px 15px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--dark-text);
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* (التأثير "الأسطوري" 😈 عند الاختيار والمرور) */
+.multiselect-options .skill-checkbox-item label:hover {
+    background-color: var(--secondary-color);
+    /* (أزرق فاتح ☁️) */
+    color: var(--primary-color);
+}
+
+.multiselect-options .skill-checkbox-item input[type="checkbox"]:checked+label {
+    background-color: var(--primary-color);
+    /* (أزرق غامق 😈) */
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* --- 24. (الجديد 😈) تصميم "الصفحات الثابتة" ⚖️ (Contact/Privacy) --- */
+.contact-container {
+    display: flex;
+    gap: 30px;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 64, 133, 0.05);
+    overflow: hidden;
+    /* (لجعل الزوايا "جميلة" 🎨) */
+}
+
+.contact-info {
+    width: 40%;
+    background-color: var(--dark-text);
+    /* (أسود/أزرق غامق 😈) */
+    color: #fff;
+    padding: 40px;
+}
+
+.contact-info h3 {
+    font-size: 24px;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.info-box i {
+    font-size: 24px;
+    color: var(--primary-color);
+    /* (أزرق 😈) */
+    width: 40px;
+}
+
+.info-box div strong {
+    font-size: 16px;
+    color: #fff;
+}
+
+.info-box div p {
+    font-size: 14px;
+    color: #ccc;
+    margin: 0;
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+    /* (تأثير "الوحش" 😈) */
+}
+
+.contact-form-wrapper {
+    width: 60%;
+    padding: 40px;
+}
+
+/* (ستايل 🎨 لصفحة "الخصوصية" 🛡️) */
+.static-page-card {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 64, 133, 0.05);
+    padding: 40px;
+    margin-top: 20px;
+}
+
+.static-page-card h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+.static-page-card p,
+.static-page-card li {
+    font-size: 15px;
+    color: var(--light-text);
+    line-height: 1.8;
+}
+
+.static-page-card ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* --- 25. (الجديد 😈) تصميم "الهيرو المصغر" 🚀 (About/Contact/Privacy) --- */
+.hero-section-small {
+    background-image: linear-gradient(135deg, var(--primary-color) 0%, #007bff 100%);
+    color: #ffffff;
+    padding: 40px 0;
+    /* (أصغر 😈) */
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-section-small h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section-small p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+/* --- 26. (الجديد 😈) تصميم "بطاقة الدفع" 💳 --- */
+.payment-card {
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 64, 133, 0.05);
+    padding: 30px;
+}
+
+.payment-card h3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.payment-line-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: var(--light-text);
+    margin-bottom: 15px;
+}
+
+.payment-line-item strong {
+    color: var(--dark-text);
+    font-weight: 700;
+}
+
+.payment-divider {
+    border: 0;
+    border-top: 1px dashed var(--border-color);
+    margin: 20px 0;
+}
+
+.payment-line-item.total strong {
+    font-size: 22px;
+    color: var(--primary-color);
+}
+
+.payment-card .auth-form {
+    margin-top: 20px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+}
+
+.payment-card .btn-primary-solid i {
+    margin-right: 8px;
+}

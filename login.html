@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connexion - FreeLink</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.php" class="logo">FreeLink</a>
+
+        <ul class="nav-links">
+          <li><a href="index.php#about">À Propos</a></li>
+          <li><a href="signup.php" class="btn btn-primary">S'inscrire</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="auth-page">
+      <div class="auth-container">
+        <h1 class="auth-title">Se connecter</h1>
+        <p class="auth-subtitle">Accédez à votre tableau de bord FreeLink.</p>
+
+        <form action="login_process.php" method="POST" class="auth-form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Entrez votre email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Entrez votre mot de passe"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary-solid btn-full">
+              Se connecter
+            </button>
+          </div>
+        </form>
+
+        <div class="auth-footer">
+          <p>
+            Vous n'avez pas de compte ?
+            <a href="signup.php">S'inscrire maintenant</a>
+          </p>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
