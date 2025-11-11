@@ -25,30 +25,42 @@ try {
     exit();
 }
 
+// (مهم 🚀: إخبار المتصفح أن هذا "JSON" وليس "HTML")
 header('Content-Type: application/json');
+
 $action = $_REQUEST['action'] ?? null;
 
 try {
     switch ($action) {
         
-        // --- الحالة 1: جلب المحادثات (النسخة النظيفة 🚀) ---
+        // --- الحالة 1: جلب المحادثات (النسخة النهائية 100% 🚀) ---
         case 'load_conversations':
             $stmt = $conn->prepare(
                 "SELECT 
                     c.id as conversation_id,
                     u.id as other_user_id,
                     u.name as other_user_name,
-                    fp.profile_picture as other_user_pic,
+                    
+                    -- (تصحيح 1 😈: جلب صورة العميل أو الفريلانسر)
+                    COALESCE(fp.profile_picture, cp.profile_picture, 'images/default-avatar.png') as other_user_pic,
+                    
                     (SELECT body FROM messages m WHERE m.conversation_id = c.id ORDER BY m.created_at DESC LIMIT 1) as last_message,
-                    (SELECT created_at FROM messages m WHERE m.conversation_id = c.id ORDER BY m.created_at DESC LIMIT 1) as last_message_time
+                    c.updated_at as last_message_time 
+                    
                  FROM conversations c
                  JOIN users u ON u.id = IF(c.user1_id = ?, c.user2_id, c.user1_id)
-                 LEFT JOIN freelancer_profiles fp ON u.id = fp.user_id
+                 LEFT JOIN freelancer_profiles fp ON u.id = fp.user_id AND u.role = 'freelancer'
+                 LEFT JOIN client_profiles cp ON u.id = cp.user_id AND u.role = 'client'
                  WHERE c.user1_id = ? OR c.user2_id = ?
-                 ORDER BY last_message_time DESC"
+                 
+                 -- (LE VRAI CORRECTIF 🚀: Trier par la date de la conversation, c'est plus simple)
+                 ORDER BY c.updated_at DESC
+                "
             );
             $stmt->execute([$current_user_id, $current_user_id, $current_user_id]);
             $conversations = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+            // (إرسال الـ JSON 🚀)
             echo json_encode(['conversations' => $conversations]); 
             break;
 
@@ -116,6 +128,7 @@ try {
             $stmt_insert = $conn->prepare("INSERT INTO messages (conversation_id, sender_id, body) VALUES (?, ?, ?)");
             $stmt_insert->execute([$convo_id, $current_user_id, $message_body]);
 
+            // (تحديث ⏱️ وقت المحادثة)
             $conn->prepare("UPDATE conversations SET updated_at = CURRENT_TIMESTAMP WHERE id = ?")->execute([$convo_id]);
 
             echo json_encode(['status' => 'success', 'message' => 'Message envoyé', 'new_convo_id' => $new_convo_id]);
@@ -126,6 +139,7 @@ try {
     }
 } catch (Exception $e) {
     http_response_code(400);
-    echo json_encode(['error' => $e->getMessage()]);
+    error_log("Chat API Error: " . $e->getMessage()); // Écrit l'erreur dans les logs du serveur
+    echo json_encode(['error' => $e->getMessage()]); // Renvoie l'erreur au JS
 }
 ?>
