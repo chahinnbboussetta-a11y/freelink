@@ -7,8 +7,8 @@ if (!$current_user_id || $user_role != 'client') {
     header("Location: login.html");
     exit();
 }
-// (نستخدم $current_user_id بدلاً من $client_id)
 $client_id = $current_user_id; 
+// ($conn جاهز 🚀)
 
 // --- الخطوة 3: استقبال البيانات (POST) ---
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // --- (التأمين الأسطوري 😈) ---
-    // (نتأكد أن العميل يملك المشروع وأنه "قيد المراجعة")
     try {
         $stmt_check = $conn->prepare(
             "SELECT id FROM projects 
@@ -41,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("خطأ في التحقق من الملكية: " . $e->getMessage());
     }
     
-    // --- الخطوة 4: (المستوى الأخير 😈) - تنفيذ التحديثات (Transaction) ---
+    // --- الخطوة 4: (المستوى الأخير 😈) - "المال" 💰 + "التقييم" ⭐️ ---
     try {
         $conn->beginTransaction(); // (ابدأ العملية)
 
@@ -62,7 +61,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $comment
         ]);
         
-        // (خطوة 3: في المستقبل، هنا يتم "تحرير المال" 💰)
+        // --- (الكود الأسطوري الجديد 😈: "تحرير" 💸 "المال" 💰) ---
+        
+        // 3. (أ. "اصطياد" 🕵️‍♂️ "العملية" 💰)
+        $stmt_trans = $conn->prepare(
+            "SELECT id, amount FROM transactions 
+             WHERE project_id = ? AND status = 'paid'" // (ابحث 🕵️‍♂️ عن "المال" 💰 "المدفوع")
+        );
+        $stmt_trans->execute([$project_id]);
+        $transaction = $stmt_trans->fetch(PDO::FETCH_ASSOC);
+
+        if ($transaction) {
+            $amount_to_release = $transaction['amount'];
+            $transaction_id = $transaction['id'];
+
+            // 3. (ب. "حرر" 💸 "العملية" 💰)
+            $stmt_release_trans = $conn->prepare("UPDATE transactions SET status = 'released' WHERE id = ?");
+            $stmt_release_trans->execute([$transaction_id]);
+
+            // 3. (ج. "أضف" 😈 "المال" 💰 إلى "محفظة" 🤑 الطالب 👨‍🎓)
+            $stmt_update_wallet = $conn->prepare(
+                "UPDATE freelancer_profiles 
+                 SET wallet_balance = wallet_balance + ? 
+                 WHERE user_id = ?"
+            );
+            $stmt_update_wallet->execute([$amount_to_release, $freelancer_id]);
+        }
+        // --- (نهاية "الكود الأسطوري" 😈) ---
 
         // 4. (تم!) أكّد العملية
         $conn->commit();
